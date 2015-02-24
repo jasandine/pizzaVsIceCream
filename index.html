@@ -1,14 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="restaurantPricing">
   <head>
-    <title></title>
-    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Playfair+Display:400,400italic|Lato:900" rel="stylesheet" />
+    <title>Pizza vs Ice Cream: This Time It&rsquo;s Personal</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Playfair+Display:400,400italic|Lato:900|Permanent+Marker" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.js"></script>
     <script src="app.js"></script>
+    <script src="controllers/IceCreamController.js"></script>
+    <script src="controllers/PizzaController.js"></script>
+    <script src="services/CashRegisterFactory.js"></script>
   </head>
   <body>
+    <div class="jumbotron">
+      <h1 class="container">Pizza vs Ice Cream</h1>
+      <h2 class="container">This Time It&rsquo;s Personal</h2>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div ng-controller="PizzaCtrl">
+          <div class="col-md-6">
+            <h3>Pizza</h3>
+            <p>Number of slices: {{ slices }}</p>
+            <p><a ng-click="addSlice()">Add a slice</a> | <a ng-click="removeSlice()">Remove a slice</a></p>
 
+          </div>
+        </div>
+
+        <div ng-controller="IceCreamCtrl">
+          <div class="col-md-6">
+            <h3>Ice Cream</h3>
+            <p>Number of scoops: {{ scoops }}</p>
+            <p><a ng-click="addScoop()">Add a scoop</a> | <a ng-click="removeScoop()">Remove a scoop</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
