@@ -21,18 +21,28 @@
         <div ng-controller="PizzaCtrl">
           <div class="col-md-6">
             <h3>Pizza</h3>
-            <p>Number of slices: {{ slices }}</p>
-            <p><a ng-click="addSlice()">Add a slice</a> | <a ng-click="removeSlice()">Remove a slice</a></p>
-
+            <p>Slices cost ${{ CashRegisterFactory.pizzaCost }}</p>
+            <p>We only got pepperoni. How many you want?</p>
+            <p>Number of slices: {{ CashRegisterFactory.slices }}</p>
+            <p><a ng-click="CashRegisterFactory.addSlice()">Add a slice</a> | <a ng-click="CashRegisterFactory.removeSlice()">Remove a slice</a></p>
+            <p>Total for pizza: ${{ CashRegisterFactory.pizzaTotal }}</p>
           </div>
         </div>
 
         <div ng-controller="IceCreamCtrl">
           <div class="col-md-6">
             <h3>Ice Cream</h3>
-            <p>Number of scoops: {{ scoops }}</p>
-            <p><a ng-click="addScoop()">Add a scoop</a> | <a ng-click="removeScoop()">Remove a scoop</a></p>
+            <p>Scoops cost ${{ CashRegisterFactory.iceCreamCost }}</p>
+            <p>We only got neapolitan. How many you want?</p>
+            <p>Number of scoops: {{ CashRegisterFactory.scoops }}</p>
+            <p><a ng-click="CashRegisterFactory.addScoop()">Add a scoop</a> | <a ng-click="CashRegisterFactory.removeScoop()">Remove a scoop</a></p>
+            <p>Total for ice cream: ${{ CashRegisterFactory.iceCreamTotal }}</p>
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Grand total: $</h3>
         </div>
       </div>
     </div>
