@@ -21,28 +21,23 @@
         <div ng-controller="PizzaCtrl">
           <div class="col-md-6">
             <h3>Pizza</h3>
-            <p>Slices cost ${{ CashRegisterFactory.pizzaCost }}</p>
+            <p>Slices cost ${{ cost }}</p>
             <p>We only got pepperoni. How many you want?</p>
-            <p>Number of slices: {{ CashRegisterFactory.slices }}</p>
-            <p><a ng-click="CashRegisterFactory.addSlice()">Add a slice</a> | <a ng-click="CashRegisterFactory.removeSlice()">Remove a slice</a></p>
-            <p>Total for pizza: ${{ CashRegisterFactory.pizzaTotal }}</p>
+            <p>Number of slices: {{ qty }}</p>
+            <p><button ng-click="addSlice(); getSliceTotal(); updateGrandTotal()" class="btn btn-success">Add a slice</button> <button ng-click="removeSlice(); getSliceTotal(); updateGrandTotal()" class="btn btn-danger">Remove a slice</button></p>
+            <h3>Total for pizza: ${{ total }}</h3>
           </div>
         </div>
 
         <div ng-controller="IceCreamCtrl">
           <div class="col-md-6">
             <h3>Ice Cream</h3>
-            <p>Scoops cost ${{ CashRegisterFactory.iceCreamCost }}</p>
+            <p>Scoops cost ${{ cost }}</p>
             <p>We only got neapolitan. How many you want?</p>
-            <p>Number of scoops: {{ CashRegisterFactory.scoops }}</p>
-            <p><a ng-click="CashRegisterFactory.addScoop()">Add a scoop</a> | <a ng-click="CashRegisterFactory.removeScoop()">Remove a scoop</a></p>
-            <p>Total for ice cream: ${{ CashRegisterFactory.iceCreamTotal }}</p>
+            <p>Number of scoops: {{ qty }}</p>
+            <p><button ng-click="addScoop(); getScoopTotal(); updateGrandTotal()" class="btn btn-success">Add a scoop</button> <button ng-click="removeScoop(); getScoopTotal(); updateGrandTotal()" class="btn btn-danger">Remove a scoop</button></p>
+            <h3>Total for ice cream: ${{ total }}</h3>
           </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <h3>Grand total: $</h3>
         </div>
       </div>
     </div>
